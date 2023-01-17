@@ -10,8 +10,15 @@ function App() {
   const [g, setG] = useState<string>("");
   const [h, setH] = useState<string>("");
 
+  const handleReset = () => {
+    const textareas = document.querySelectorAll('textarea');
+    textareas.forEach((t) => {
+      t.value = "";
+    })
+  };
+
   return (
-    <div className="App w-screen h-screen flex-cols gap-2 p-2 align-middle bg-slate-100">
+    <div className="App w-screen h-screen gap-2 p-2 align-middle bg-slate-100">
       <div className='flex gap-2 align-middle justify-center'>
         <div className='grid grid-cols-3 grid-rows-3 gap-1'>
           <textarea className='bg-slate-200 lg:pt-[2rem] pt-[3vw] overflow-clip rounded-md resize-none text-center h-[10vw] w-[10vw] lg:h-20 lg:w-20'></textarea>
@@ -119,6 +126,10 @@ function App() {
           <textarea className='bg-slate-200 lg:pt-[2rem] pt-[3vw] overflow-clip rounded-md resize-none text-center h-[10vw] w-[10vw] lg:h-20 lg:w-20'></textarea>
         </div>
       </div>
+      <div className='lg:absolute lg:top-[46.5vh] lg:right-[8vw] flex justify-center'>
+        <button onClick={handleReset} className='bg-slate-200 rounded-full w-6 mt-2 text-xl'>↺</button>
+      </div>
+      <canvas className="hidden" id='canvas' />
     </div>
   )
 }
