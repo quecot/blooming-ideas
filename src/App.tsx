@@ -15,6 +15,15 @@ function App() {
     textareas.forEach((t) => {
       t.value = "";
     })
+
+    setA('')
+    setB('')
+    setC('')
+    setD('')
+    setE('')
+    setF('')
+    setG('')
+    setH('')
   };
 
   return (
